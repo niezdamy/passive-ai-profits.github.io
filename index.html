@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passive AI Profits</title>
+    <style>
+        /* Basic Reset and Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #ddcbfd 100%);
+            /* Subtle network pattern attempt (optional, complex to replicate exactly) */
+            /* background-image: radial-gradient(circle at 10% 90%, rgba(167, 139, 250, 0.1) 0%, transparent 30%),
+                              radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.1) 0%, transparent 30%); */
+            background-size: cover;
+            min-height: 100vh;
+            padding-bottom: 50px; /* Space at bottom */
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            /* Simple placeholder logo shape */
+            width: 30px;
+            height: 30px;
+            background-color: #8b5cf6; /* Purple */
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%); /* Shape approximation */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b5563; /* Grayish text */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #8b5cf6; /* Purple */
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #8b5cf6;
+            color: #8b5cf6;
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #8b5cf6;
+            color: #fff;
+        }
+
+        .login-link {
+             text-decoration: none;
+            color: #4b5563; /* Grayish text */
+            font-weight: 500;
+            margin-right: 10px;
+        }
+         .login-link:hover {
+            color: #8b5cf6; /* Purple */
+        }
+
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem; /* Large heading */
+            color: #1f2937; /* Darker text */
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4b5563; /* Grayish text */
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero .btn-primary {
+            background-color: #8b5cf6; /* Purple */
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #7c3aed; /* Darker purple */
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 0;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .feature-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            flex-basis: calc(33.333% - 20px); /* Adjust basis for gap */
+            min-width: 280px; /* Prevent cards from becoming too narrow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card .icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            color: #8b5cf6; /* Purple */
+        }
+
+        /* Simple inline SVGs for icons */
+        .icon-content svg { fill: currentColor; }
+        .icon-art svg { fill: currentColor; }
+        .icon-automation svg { fill: currentColor; }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #1f2937; /* Darker text */
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #6b7280; /* Lighter gray text */
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Push link to bottom if needed */
+            max-width: 250px; /* Limit text width */
+        }
+
+        .feature-card a {
+            color: #8b5cf6; /* Purple */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .feature-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments (simple example) */
+        @media (max-width: 992px) {
+            .features-container {
+                justify-content: center;
+            }
+            .feature-card {
+                 flex-basis: calc(50% - 15px);
+            }
+             nav ul {
+                display: none; /* Hide nav links on smaller screens for simplicity */
+            }
+        }
+         @media (max-width: 768px) {
+             .hero h1 {
+                 font-size: 2.8rem;
+             }
+              .hero p {
+                 font-size: 1rem;
+             }
+             .features-container {
+                 flex-direction: column;
+                 align-items: center;
+             }
+             .feature-card {
+                 flex-basis: 80%;
+                 max-width: 400px;
+             }
+              header .container {
+                 flex-direction: column;
+                 gap: 15px;
+             }
+             nav ul { display: none; } /* Ensure it's hidden */
+             .header-buttons { margin-top: 10px; }
+        }
+
+         @media (max-width: 480px) {
+             .hero h1 {
+                 font-size: 2.2rem;
+             }
+             .hero .btn-primary {
+                 padding: 12px 30px;
+                 font-size: 1rem;
+             }
+              .feature-card h3 {
+                  font-size: 1.3rem;
+              }
+         }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <!-- Using placeholder text as original is garbled -->
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                 <!-- Using placeholder text -->
+                <a href="#" class="login-link">Login</a>
+                <a href="#" class="btn btn-outline">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Passive AI Profits</h1>
+                <!-- Using placeholder text as original is garbled -->
+                <p>Unlock the power of Artificial Intelligence to generate passive income streams. Explore our tools and resources designed for creators and entrepreneurs.</p>
+                 <!-- Using placeholder text -->
+                <a href="#" class="btn btn-primary">Explore Our Solutions</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container features-container">
+                <article class="feature-card">
+                    <div class="icon icon-content">
+                        <!-- Simple SVG Placeholder for Content/Wand -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"><path d="M13 10h-2v3H8v2h3v3h2v-3h3v-2h-3v-3zm7.17-4.31c-.39-.39-1.02-.39-1.41 0l-1.06 1.06-7.07 7.07-1.41 3.54 3.54-1.41 8.48-8.48c.39-.39.39-1.02 0-1.41l-1.07-1.07zm-2.12 0l1.06 1.06-.71.71-1.06-1.06.71-.71zM3 21v-4.24l7.4-7.4 4.24 4.24L7.24 21H3z"/></svg>
+                    </div>
+                     <!-- Using descriptive title -->
+                    <h3>Content Creation</h3>
+                    <!-- Using placeholder text -->
+                    <p>Leverage AI to automate and enhance your content generation process effortlessly.</p>
+                     <!-- Using placeholder text -->
+                    <a href="#">Learn More</a>
+                </article>
+
+                <article class="feature-card">
+                    <div class="icon icon-art">
+                        <!-- Simple SVG Placeholder for Art/Document/Click -->
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13zm6.15 5.35l-1.41 1.41-2.48-2.48-3.18 3.18c-.39.39-1.02.39-1.41 0l-4.24-4.24c-.39-.39-.39-1.02 0-1.41l1.41-1.41L12 14.5l3.18-3.18c.39-.39 1.02-.39 1.41 0l1.56 1.56z"/></svg>
+
+                    </div>
+                    <!-- Using descriptive title -->
+                    <h3>AI Art Monetization</h3>
+                     <!-- Using placeholder text -->
+                    <p>Generate unique AI art and discover effective strategies to monetize your creations.</p>
+                     <!-- Using placeholder text -->
+                    <a href="#">Learn More</a>
+                </article>
+
+                <article class="feature-card">
+                    <div class="icon icon-automation">
+                         <!-- Simple SVG Placeholder for Automation/Gear -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    </div>
+                    <!-- Using descriptive title -->
+                    <h3>AI Automation</h3>
+                     <!-- Using placeholder text -->
+                    <p>Implement AI-driven automation tools to streamline workflows and boost efficiency.</p>
+                     <!-- Using placeholder text -->
+                    <a href="#">Learn More</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
