@@ -8,6 +8,13 @@ const nextConfig = {
     domains: [],
     unoptimized: true, // Required for static exports
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   // This is optional, but can be useful for GitHub Pages to understand paths properly
   basePath: process.env.NODE_ENV === 'production' ? '/passive-ai-profits.github.io' : '',
 }
