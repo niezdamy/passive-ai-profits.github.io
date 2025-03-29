@@ -28,6 +28,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
               const target = e.target as HTMLImageElement;
               target.onerror = null;
               target.src = "/placeholder.svg";
+              console.log(`Image for ${tool.name} failed to load: ${tool.image}`);
             }}
           />
         </div>

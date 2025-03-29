@@ -7,7 +7,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
+// Force static generation
 export const dynamic = "force-static"
+export const dynamicParams = false
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -94,7 +96,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   }
 }
 
-export default function BlogPost({ params }: { params: { id: string } }) {
+// In Next.js 15.2.4, we need to accommodate the new typing system
+type BlogParams = {
+  id: string;
+};
+
+export default async function BlogPost({ params }: { params: BlogParams }) {
   // Sample blog posts data
   const blogPosts = {
     "1": {

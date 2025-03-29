@@ -52,7 +52,7 @@ export default function ToolsPageClient() {
       description: "AI voice generation platform for creating realistic voiceovers, audiobooks, and podcast content.",
       category: "audio",
       url: "https://elevenlabs.io",
-      image: "/images/tools/elevenlabs-logo.png",
+      image: "/images/tool-logos/elevenlabs.svg",
     },
     {
       id: 5,
@@ -104,7 +104,7 @@ export default function ToolsPageClient() {
         "All-in-one audio and video editing platform with AI transcription for creating podcast and video content.",
       category: "audio",
       url: "https://www.descript.com",
-      image: "/images/tools/descript-logo.png",
+      image: "/images/tool-logos/descript.svg",
     },
     {
       id: 11,
@@ -113,7 +113,7 @@ export default function ToolsPageClient() {
         "OpenAI's image generation model for creating unique visuals for products, marketing, and digital assets.",
       category: "art",
       url: "https://openai.com/dall-e-3",
-      image: "/images/tools/dalle-logo.png",
+      image: "/images/tool-logos/dalle.svg",
     },
     {
       id: 12,
@@ -121,7 +121,7 @@ export default function ToolsPageClient() {
       description: "AI writing assistant specialized for marketing copy, blog posts, and long-form content creation.",
       category: "writing",
       url: "https://www.jasper.ai",
-      image: "/images/tools/jasper-logo.png",
+      image: "/images/tool-logos/jasper.svg",
     },
     {
       id: 13,
@@ -130,7 +130,7 @@ export default function ToolsPageClient() {
         "AI art generation platform with fine-tuning capabilities for creating consistent style digital assets.",
       category: "art",
       url: "https://leonardo.ai",
-      image: "/images/tools/leonardo-logo.png",
+      image: "/images/tool-logos/leonardo.svg",
     },
     {
       id: 14,
@@ -146,7 +146,7 @@ export default function ToolsPageClient() {
       description: "AI video generation platform for creating professional videos with virtual presenters from text.",
       category: "video",
       url: "https://www.synthesia.io",
-      image: "/images/tools/synthesia-logo.png",
+      image: "/images/tool-logos/synthesia.svg",
     },
     {
       id: 16,
@@ -154,7 +154,7 @@ export default function ToolsPageClient() {
       description: "Open-source AI image generation model for creating artwork, illustrations, and design assets.",
       category: "art",
       url: "https://stability.ai",
-      image: "/images/tools/stability-logo.png",
+      image: "/images/tool-logos/stability.svg",
     },
     {
       id: 17,
@@ -162,7 +162,7 @@ export default function ToolsPageClient() {
       description: "AI-powered SEO content optimization tool for creating high-ranking articles and blog posts.",
       category: "seo",
       url: "https://www.frase.io",
-      image: "/images/tools/frase-logo.png",
+      image: "/images/tool-logos/frase.svg",
     },
     {
       id: 18,
@@ -178,7 +178,7 @@ export default function ToolsPageClient() {
       description: "AI writing assistant integrated with Notion for content creation, summarization, and organization.",
       category: "writing",
       url: "https://www.notion.so/product/ai",
-      image: "/images/tools/notion-logo.png",
+      image: "/images/tool-logos/notion.svg",
     },
     {
       id: 20,
@@ -202,7 +202,7 @@ export default function ToolsPageClient() {
       description: "AI transcription service for converting audio to text for content repurposing and accessibility.",
       category: "audio",
       url: "https://otter.ai",
-      image: "/images/tools/otter-logo.png",
+      image: "/images/tool-logos/otter.svg",
     },
     {
       id: 23,

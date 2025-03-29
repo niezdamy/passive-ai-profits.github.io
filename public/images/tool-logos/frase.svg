@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Account does not exist</title><style>body{margin: 0; font-family: system-ui, sans-serif;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color:#1c1c1c;}
+a {color:#327bba;}
+#top {position: absolute;bottom:65%;overflow:hidden;width:100%;}
+.top-images {list-style: none;text-align: center;}
+.top-images ul {display: flex;padding: 0;margin:0;}
+.top-images li {padding: 66px 31px 0;display:inline-block;}
+img {width:120px;height: 161px;}
+img.not-found {opacity:0.2;}
+#middle {bottom: 45%;position: absolute;left: 50%;transform: translate(-50%, 55%);}
+.middle-text {text-align: center;max-width: 600px;}
+.middle-text h1 {font-size: 48px;margin:20px 0;}
+.middle-text p {font-size: 16px;line-height: 1.5;}
+#bottom {bottom: 20%;position: absolute;left: 50%;transform: translate(-50%, 80%);}
+#bottom div {display: block;text-align: center;}
+#bottom img { width: 96px; height:auto; }
+#bottom a {text-decoration: none;}
+.break-words { overflow-wrap: break-word; }
+@media only screen and (max-width:767px){
+    .top-images li {padding: 30px 15px 0;}
+    img {width:60px;height: 80px;}
+    #middle {width: 100%;}
+    .middle-text {max-width: 85%;margin: 0 auto;}
+    .middle-text h1 {font-size: 36px;}
+}
+</style></head><body><section id="top"><div class="content"><div class="top-images"><ul class="zero-row"></ul><ul class="first-row"></ul><ul class="second-row"></ul></div></div></section><section id="middle"><div class="middle-text"><h1>Account does not exist</h1><p>The
+<strong>fraseio</strong>
+account doesn't exist. If you think that's an error, please
+<a href="https://sirv.com/contact/">contact Sirv support</a>.</p></div></section><section id="bottom"><div><a href="https://sirv.com"><img src="https://sirv-cdn.sirv.com/website/img/sirv-logo.svg" alt="Sirv logo"></a></div></section><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>$(document).ready(function(){
+  var wh = window.innerHeight;
+  var ww = window.innerWidth;
+  if (ww > 767){
+      var imagesCount = Math.ceil(Math.ceil(ww/182)/2)*2+1;
+      var imagesCount2 = (Math.ceil(Math.ceil(ww/182)/2)*2-2)/2;
+      var imagesWidth = imagesCount * 182;
+      var imagesMargin = 0 - (ww - imagesWidth)/2;
+  } else {
+      var imagesCount = Math.ceil(Math.ceil(ww/90)/2)*2+1;
+      var imagesCount2 = (Math.ceil(Math.ceil(ww/90)/2)*2-2)/2;
+      var imagesWidth = imagesCount * 90;
+      var imagesMargin = 0 - (ww - imagesWidth)/2;
+  }
+  $('.top-images').css({'margin-left':'-'+imagesMargin+'px'});
+  $('.content .top-images ul.zero-row').prepend('<li><img class="not-found" src="https://sirv.sirv.com/assets/error_pages/NotFound.svg" /></li>');
+  for (var i = 1; i <= imagesCount; i++){
+      $('.content .top-images ul.zero-row').prepend('<li><img class="not-found" src="https://sirv.sirv.com/assets/error_pages/NotFound.svg" /></li>');
+      $('.content .top-images ul.first-row').prepend('<li><img class="not-found" src="https://sirv.sirv.com/assets/error_pages/NotFound.svg" /></li>');
+  }
+  for (var i = 1; i <= imagesCount2; i++){
+      $('.content .top-images ul.second-row').prepend('<li><img class="not-found" src="https://sirv.sirv.com/assets/error_pages/NotFound.svg" /></li>');
+  }
+  $('.content .top-images ul.second-row').prepend('<li><img src="https://sirv.sirv.com/assets/error_pages/4.svg" /></li>');
+  $('.content .top-images ul.second-row').prepend('<li><img src="https://sirv.sirv.com/assets/error_pages/0.svg" /></li>');
+  $('.content .top-images ul.second-row').prepend('<li><img src="https://sirv.sirv.com/assets/error_pages/4.svg" /></li>');
+  for (var i = 1; i <= imagesCount2; i++){
+      $('.content .top-images ul.second-row').prepend('<li><img class="not-found" src="https://sirv.sirv.com/assets/error_pages/NotFound.svg" /></li>');
+  }
+});
+</script></body></html>
