@@ -34,9 +34,7 @@ export default function Navbar() {
           <Link href="/about" className="text-sm font-medium hover:text-primary">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-primary">
-            Contact
-          </Link>
+
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -89,13 +87,7 @@ export default function Navbar() {
           >
             About
           </Link>
-          <Link
-            href="/contact"
-            className="text-lg font-medium p-2 hover:bg-gray-100 rounded"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
+
 
           <div className="pt-4 flex flex-col gap-2">
             <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => setIsMenuOpen(false)}>
