@@ -15,7 +15,8 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  // This is optional, but can be useful for GitHub Pages to understand paths properly
+  // For GitHub Pages hosting
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/passive-ai-profits.github.io' : '',
   basePath: process.env.NODE_ENV === 'production' ? '/passive-ai-profits.github.io' : '',
 }
 

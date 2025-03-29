@@ -2,16 +2,20 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
+  const isActive = (href: string) => pathname === href
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -22,19 +26,42 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm font-medium hover:text-primary">
+          <Link
+            href="/"
+            className={cn(
+              "text-sm font-medium hover:text-primary",
+              isActive("/") ? "text-primary font-semibold" : "",
+            )}
+          >
             Home
           </Link>
-          <Link href="/blog" className="text-sm font-medium hover:text-primary">
+          <Link
+            href="/blog"
+            className={cn(
+              "text-sm font-medium hover:text-primary",
+              isActive("/blog") ? "text-primary font-semibold" : "",
+            )}
+          >
             Blog
           </Link>
-          <Link href="/tools" className="text-sm font-medium hover:text-primary">
+          <Link
+            href="/tools"
+            className={cn(
+              "text-sm font-medium hover:text-primary",
+              isActive("/tools") ? "text-primary font-semibold" : "",
+            )}
+          >
             Tools
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-primary">
+          <Link
+            href="/about"
+            className={cn(
+              "text-sm font-medium hover:text-primary",
+              isActive("/about") ? "text-primary font-semibold" : "",
+            )}
+          >
             About
           </Link>
-
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -61,42 +88,54 @@ export default function Navbar() {
         <nav className="flex flex-col p-6 space-y-4">
           <Link
             href="/"
-            className="text-lg font-medium p-2 hover:bg-gray-100 rounded"
+            className={cn(
+              "text-lg font-medium p-2 hover:bg-gray-100 rounded",
+              isActive("/") ? "bg-gray-100 text-primary font-semibold" : "",
+            )}
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/blog"
-            className="text-lg font-medium p-2 hover:bg-gray-100 rounded"
+            className={cn(
+              "text-lg font-medium p-2 hover:bg-gray-100 rounded",
+              isActive("/blog") ? "bg-gray-100 text-primary font-semibold" : "",
+            )}
             onClick={() => setIsMenuOpen(false)}
           >
             Blog
           </Link>
           <Link
             href="/tools"
-            className="text-lg font-medium p-2 hover:bg-gray-100 rounded"
+            className={cn(
+              "text-lg font-medium p-2 hover:bg-gray-100 rounded",
+              isActive("/tools") ? "bg-gray-100 text-primary font-semibold" : "",
+            )}
             onClick={() => setIsMenuOpen(false)}
           >
             Tools
           </Link>
           <Link
             href="/about"
-            className="text-lg font-medium p-2 hover:bg-gray-100 rounded"
+            className={cn(
+              "text-lg font-medium p-2 hover:bg-gray-100 rounded",
+              isActive("/about") ? "bg-gray-100 text-primary font-semibold" : "",
+            )}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
 
-
           <div className="pt-4 flex flex-col gap-2">
-            <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => setIsMenuOpen(false)}>
-              Stay Updated
-            </Button>
+            <Link href="/#newsletter" passHref>
+                <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => setIsMenuOpen(false)}>
+                  Stay Updated
+                </Button>
+            </Link>
           </div>
         </nav>
       </div>
     </header>
   )
 }
-
