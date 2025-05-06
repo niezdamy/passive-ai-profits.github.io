@@ -220,6 +220,47 @@ export default function ToolsPageClient() {
       url: "https://durable.co",
       image: "/images/tool-logos/durable.svg",
     },
+    // Passive income ideas (not just AI tools)
+    {
+      id: 25,
+      name: "Print-on-Demand Store",
+      description: "Create and sell custom-designed products (t-shirts, mugs, posters) using print-on-demand platforms. No inventory or upfront costs required.",
+      category: "business",
+      url: "https://www.printful.com",
+      image: "/images/tool-logos/pod.svg",
+    },
+    {
+      id: 26,
+      name: "Affiliate Marketing",
+      description: "Promote products or services online and earn commissions for each sale or lead generated through your unique affiliate link.",
+      category: "marketing",
+      url: "https://www.impact.com/affiliate-marketing/",
+      image: "/images/tool-logos/affiliate.svg",
+    },
+    {
+      id: 27,
+      name: "Online Courses",
+      description: "Create and sell online courses on platforms like Udemy or Teachable. Earn passive income as students enroll over time.",
+      category: "education",
+      url: "https://www.udemy.com/",
+      image: "/images/tool-logos/course.svg",
+    },
+    {
+      id: 28,
+      name: "Stock Photography",
+      description: "Upload your photos to stock photography sites and earn royalties each time your images are downloaded.",
+      category: "art",
+      url: "https://www.shutterstock.com/",
+      image: "/images/tool-logos/stockphoto.svg",
+    },
+    {
+      id: 29,
+      name: "E-Book Publishing",
+      description: "Write and self-publish e-books on Amazon Kindle Direct Publishing and earn royalties from global sales.",
+      category: "writing",
+      url: "https://kdp.amazon.com/",
+      image: "/images/tool-logos/ebook.svg",
+    },
   ]
 
   // Get unique categories

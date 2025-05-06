@@ -24,6 +24,7 @@ export async function generateStaticParams() {
     { id: "7" },
     { id: "8" },
     { id: "9" },
+    { id: "10" },
   ]
 }
 
@@ -79,6 +80,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       description:
         "Everything you need to know to start building passive income streams using AI tools and strategies.",
       keywords: "passive income beginners, AI income, getting started with AI",
+    },
+    "10": {
+      title: "Unlocking New AI-Powered Passive Income Streams for 2025",
+      description:
+        "Explore innovative strategies for generating passive income using the latest advancements in AI.",
+      keywords: "AI passive income 2025, new AI strategies, AI monetization, advanced AI income",
     },
   }
 
