@@ -18,8 +18,9 @@ export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
       <div className="relative h-48 overflow-hidden">
-        <Image
-          src={blog.image || "/placeholder.svg"}
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+<Image
+          src={blog.image ? `${basePath}${blog.image}` : `${basePath}/placeholder.svg`}
           alt={blog.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

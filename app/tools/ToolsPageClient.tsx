@@ -26,7 +26,7 @@ export default function ToolsPageClient() {
         "OpenAI's powerful language model for content creation, brainstorming, and automating writing tasks.",
       category: "writing",
       url: "https://chat.openai.com",
-      image: "/images/tool-logos/chatgpt.svg",
+      image: "/images/tool-logos/chatgpt.svg", // Will be prefixed with basePath at render time
     },
     {
       id: 2,

@@ -20,8 +20,9 @@ export default function ToolCard({ tool }: ToolCardProps) {
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
         <div className="w-16 h-16 rounded-md overflow-hidden bg-gray-100 flex items-center justify-center relative p-2">
-          <img 
-            src={tool.image || "/placeholder.svg"} 
+          const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+<img 
+            src={tool.image ? `${basePath}${tool.image}` : `${basePath}/placeholder.svg`} 
             alt={tool.name} 
             className="w-full h-full object-contain" 
             onError={(e) => {
