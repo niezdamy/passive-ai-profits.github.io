@@ -15,11 +15,11 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
       <div className="relative h-48 overflow-hidden">
-        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-<Image
+        <Image
           src={blog.image ? `${basePath}${blog.image}` : `${basePath}/placeholder.svg`}
           alt={blog.title}
           fill

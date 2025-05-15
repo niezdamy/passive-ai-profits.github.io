@@ -16,12 +16,12 @@ interface ToolCardProps {
 }
 
 export default function ToolCard({ tool }: ToolCardProps) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
         <div className="w-16 h-16 rounded-md overflow-hidden bg-gray-100 flex items-center justify-center relative p-2">
-          const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-<img 
+          <img 
             src={tool.image ? `${basePath}${tool.image}` : `${basePath}/placeholder.svg`} 
             alt={tool.name} 
             className="w-full h-full object-contain" 
