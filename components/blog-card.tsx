@@ -15,12 +15,13 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
+  // Use empty string as basePath - site is deployed at root level
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
       <div className="relative h-48 overflow-hidden">
         <Image
-          src={blog.image ? `${basePath}${blog.image}` : `${basePath}/placeholder.svg`}
+          src={blog.image ? (blog.image.startsWith('/') ? `${basePath}${blog.image}` : `${basePath}/${blog.image}`) : `${basePath}/placeholder.svg`}
           alt={blog.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
