@@ -15,7 +15,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
-  // Use empty string as basePath - site is deployed at root level
+  // Use configured basePath - site is deployed as a project site
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
