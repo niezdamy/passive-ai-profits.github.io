@@ -16,9 +16,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   // For GitHub Pages hosting
-  // Empty basePath and assetPrefix for main GitHub Pages site
-  assetPrefix: '',
-  basePath: '',
+  // Use proper basePath and assetPrefix for project site
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/passive-ai-profits.github.io' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/passive-ai-profits.github.io' : '',
 }
 
 module.exports = nextConfig
